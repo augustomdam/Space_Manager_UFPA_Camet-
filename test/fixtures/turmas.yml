@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  curso: MyString
+  ingresso: 2018-11-27
+  turno: MyString
+  tipo: MyString
+
+two:
+  curso: MyString
+  ingresso: 2018-11-27
+  turno: MyString
+  tipo: MyString

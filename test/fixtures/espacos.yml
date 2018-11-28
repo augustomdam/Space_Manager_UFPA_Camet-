@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_sala: 1
+  descricao: MyText
+  capacidade: 
+  disponivel: 1
+  reserva: one
+  bloco: one
+  pcd: one
+
+two:
+  numero_sala: 1
+  descricao: MyText
+  capacidade: 
+  disponivel: 1
+  reserva: two
+  bloco: two
+  pcd: two

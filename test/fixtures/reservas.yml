@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inicio: 2018-11-27 21:52:19
+  fim: 2018-11-27 21:52:19
+  ativo: 1
+  observacao: MyText
+  turma: one
+
+two:
+  inicio: 2018-11-27 21:52:19
+  fim: 2018-11-27 21:52:19
+  ativo: 1
+  observacao: MyText
+  turma: two

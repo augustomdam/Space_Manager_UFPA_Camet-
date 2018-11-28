@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyText
+  cid: MyString
+  turma: one
+
+two:
+  tipo: MyText
+  cid: MyString
+  turma: two
