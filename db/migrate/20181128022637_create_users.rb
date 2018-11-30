@@ -3,8 +3,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :nome
       t.string :cod
-      t.integer :admin
-      t.integer :ativo
+      t.integer :admin, default: 0
+      t.integer :ativo, default: 0
+      
 
       t.timestamps
     end

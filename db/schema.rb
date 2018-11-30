@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_190703) do
+ActiveRecord::Schema.define(version: 2018_11_29_000616) do
 
   create_table "blocos", force: :cascade do |t|
     t.string "descricao"
@@ -23,14 +23,12 @@ ActiveRecord::Schema.define(version: 2018_11_28_190703) do
     t.text "descricao"
     t.integer "capacidade"
     t.integer "disponivel"
-    t.integer "reserva_id"
     t.integer "bloco_id"
     t.integer "pcd_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bloco_id"], name: "index_espacos_on_bloco_id"
     t.index ["pcd_id"], name: "index_espacos_on_pcd_id"
-    t.index ["reserva_id"], name: "index_espacos_on_reserva_id"
   end
 
   create_table "manutencaos", force: :cascade do |t|
@@ -48,8 +46,10 @@ ActiveRecord::Schema.define(version: 2018_11_28_190703) do
     t.string "cid"
     t.integer "turma_id"
     t.integer "user_id"
+    t.integer "espaco_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["espaco_id"], name: "index_pcds_on_espaco_id"
     t.index ["turma_id"], name: "index_pcds_on_turma_id"
     t.index ["user_id"], name: "index_pcds_on_user_id"
   end
@@ -59,10 +59,12 @@ ActiveRecord::Schema.define(version: 2018_11_28_190703) do
     t.datetime "fim"
     t.integer "ativo"
     t.text "observacao"
+    t.integer "espaco_id"
     t.integer "turma_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["espaco_id"], name: "index_reservas_on_espaco_id"
     t.index ["turma_id"], name: "index_reservas_on_turma_id"
     t.index ["user_id"], name: "index_reservas_on_user_id"
   end
@@ -79,8 +81,8 @@ ActiveRecord::Schema.define(version: 2018_11_28_190703) do
   create_table "users", force: :cascade do |t|
     t.string "nome"
     t.string "cod"
-    t.integer "admin"
-    t.integer "ativo"
+    t.integer "admin", default: 0
+    t.integer "ativo", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 2018_11_28_190703) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

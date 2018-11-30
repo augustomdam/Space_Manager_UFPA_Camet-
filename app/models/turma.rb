@@ -1,4 +1,4 @@
 class Turma < ApplicationRecord
     has_many :pcds
-    belongs_to :reserva
+    has_many :reservas
 end

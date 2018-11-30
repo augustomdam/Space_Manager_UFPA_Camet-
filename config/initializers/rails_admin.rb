@@ -38,4 +38,28 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.main_app_name = ["Space Manager UFPA Cametá", ""]
+  config.navigation_static_links = {
+    'UFPA Cametá' => 'http://www.campuscameta.ufpa.br/'
+  }
+  config.navigation_static_label = "Lins Úteis"
+
+  config.model Espaco do
+    create do
+      field  :numero_sala
+      field  :descricao
+      field  :capacidade
+      field  :disponivel
+      field  :bloco
+    end
+   
+    edit do
+      field  :numero_sala
+      field  :descricao
+      field  :capacidade
+      field  :disponivel
+      field  :bloco
+    end
+  end
 end

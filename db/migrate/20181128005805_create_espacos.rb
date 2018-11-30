@@ -5,7 +5,6 @@ class CreateEspacos < ActiveRecord::Migration[5.2]
       t.text :descricao
       t.integer :capacidade
       t.integer :disponivel
-      t.references :reserva, foreign_key: true
       t.references :bloco, foreign_key: true
       t.references :pcd, foreign_key: true
 
