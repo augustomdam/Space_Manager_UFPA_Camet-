@@ -43,7 +43,7 @@ RailsAdmin.config do |config|
   config.navigation_static_links = {
     'UFPA Cametá' => 'http://www.campuscameta.ufpa.br/'
   }
-  config.navigation_static_label = "Lins Úteis"
+  config.navigation_static_label = "Links Úteis"
 
   config.model Espaco do
     create do
@@ -60,6 +60,87 @@ RailsAdmin.config do |config|
       field  :capacidade
       field  :disponivel
       field  :bloco
+    end
+  end
+  config.model Reserva do
+    create do
+      field  :inicio
+      field  :fim
+      field  :ativo
+      field  :observacao
+      field  :espaco
+      field  :turma
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+   
+    edit do
+      field  :inicio
+      field  :fim
+      field  :ativo
+      field  :observacao
+      field  :espaco
+      field  :turma
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+  end
+  config.model Pcd do
+    create do
+      field  :tipo
+      field  :cid
+      field  :turma_id
+      field  :espaco_id
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+   
+    edit do
+      field  :tipo
+      field  :cid
+      field  :turma_id
+      field  :espaco_id
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+  end
+  config.model Manutencao do
+    create do
+      field  :descricao
+      field  :espaco_id
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+   
+    edit do
+      field  :descricao
+      field  :espaco_id
+   
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
     end
   end
 end
