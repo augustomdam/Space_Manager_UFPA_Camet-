@@ -27,7 +27,7 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new
-    export
+    # export
     bulk_delete
     show
     edit
@@ -35,8 +35,8 @@ RailsAdmin.config do |config|
     show_in_app
 
     ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+    history_index
+    history_show
   end
 
   config.main_app_name = ["Space Manager UFPA Cametá", ""]
@@ -89,8 +89,7 @@ RailsAdmin.config do |config|
   end
   config.model Reserva do
     create do
-      field  :inicio
-      field  :fim
+      field  :data_reserva
       field  :ativo
       field  :observacao
       field  :espaco
@@ -104,8 +103,7 @@ RailsAdmin.config do |config|
     end
    
     edit do
-      field  :inicio
-      field  :fim
+      field  :data_reserva
       field  :ativo
       field  :observacao
       field  :espaco
@@ -116,6 +114,16 @@ RailsAdmin.config do |config|
           bindings[:view]._current_user.id
         end
       end
+    end
+
+    list do
+      field  :data_reserva
+      field  :ativo
+      field  :observacao
+      field  :espaco
+      field  :turma
+      field  :created_at
+      field :user_id
     end
   end
   config.model Pcd do
