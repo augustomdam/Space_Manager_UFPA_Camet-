@@ -1,8 +1,7 @@
 class CreateReservas < ActiveRecord::Migration[5.2]
   def change
     create_table :reservas do |t|
-      t.datetime :inicio
-      t.datetime :fim
+      t.datetime :data_reserva
       t.integer :ativo
       t.text :observacao
       t.references :espaco, foreign_key: true

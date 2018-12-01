@@ -24,11 +24,9 @@ ActiveRecord::Schema.define(version: 2018_11_29_000616) do
     t.integer "capacidade"
     t.integer "disponivel"
     t.integer "bloco_id"
-    t.integer "pcd_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bloco_id"], name: "index_espacos_on_bloco_id"
-    t.index ["pcd_id"], name: "index_espacos_on_pcd_id"
   end
 
   create_table "manutencaos", force: :cascade do |t|
@@ -45,8 +43,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_000616) do
     t.text "tipo"
     t.string "cid"
     t.integer "turma_id"
-    t.integer "user_id"
     t.integer "espaco_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["espaco_id"], name: "index_pcds_on_espaco_id"
@@ -55,8 +53,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_000616) do
   end
 
   create_table "reservas", force: :cascade do |t|
-    t.datetime "inicio"
-    t.datetime "fim"
+    t.datetime "data_reserva"
     t.integer "ativo"
     t.text "observacao"
     t.integer "espaco_id"

@@ -1,66 +1,53 @@
 pt-BR:
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
-      about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
-      about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
-      almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-      half_a_minute: meio minuto
-      less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
-      less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
-      over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
-      x_days:
-        one: 1 dia
-        other: "%{count} dias"
-      x_minutes:
-        one: 1 minuto
-        other: "%{count} minutos"
-      x_months:
-        one: 1 mês
-        other: "%{count} meses"
-      x_years:
-        one: 1 ano
-        other: "%{count} anos"
-      x_seconds:
-        one: 1 segundo
-        other: "%{count} segundos"
-    prompts:
-      day: Dia
-      hour: Hora
-      minute: Minuto
-      month: Mês
-      second: Segundo
-      year: Ano
-  activerecord:
-    models:
-      client:
-        one: Cliente
-        other: Clientes
-    attributes:
-      client:
-        name: "Nome"
-        company_name: "Nome da Empresa"
+  active_record:
+    errors:
+      models:
+        attributes:
+          data_reserva_blank: "Não permitido Campo Vazio"
+  errors:
+    messages:
+      not_found: "não encontrado"
+      already_confirmed: "já foi confirmado"
+      not_locked: "não está bloqueado"
+  devise:
+    failure:
+      unauthenticated: 'Você precisa logar-se ou cadastrar-se antes de continuar.'
+      unconfirmed: 'Você precisa confirmar sua conta antes de continuar.'
+      locked: 'Sua conta está bloqueada.'
+      invalid: 'E-mail ou senha inválida.'
+      invalid_token: 'Chave de autenticação inválida.'
+      timeout: 'Sua sessão espirou, por favor logue-se novamente para continuar.'
+      inactive: 'Sua conta ainda não foi ativada.'
+    sessions:
+      signed_in: 'Logado com sucesso.'
+      signed_out: 'Deslogado com sucesso.'
+    passwords:
+      send_instructions: 'Você receberá um email com instruções sobre a recuperação da senha em alguns minutos.'
+      updated: 'Sua senha foi alterada com sucesso. Agora você está logado.'
+    confirmations:
+      send_instructions: 'Você receberá um email com instruções sobre como recuperar sua conta em alguns minutos.'
+      confirmed: 'Sua conta foi confirmada com sucesso. Agora você está logado.'
+    registrations:
+      signed_up: 'Você se cadastrou com sucesso. Se habilitado, a confirmação será enviada para seu e-mail.'
+      updated: 'Você atualizou sua conta com sucesso.'
+      destroyed: 'Tchau! Sua conta foi cancelada com sucesso.'
+    unlocks:
+      send_instructions: 'Você receberá um e-mail com instruções sobre como desbloquear sua conta em alguns minutos.'
+      unlocked: 'Sua conta foi desbloqueada com sucesso. Você agora está logado.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Informações de confirmação'
+      reset_password_instructions:
+        subject: 'Informações de recuperação de senha'
+      unlock_instructions:
+        subject: 'Informações de desbloqueio'   
   views:
   admin:
     home:
       name: Home
     pagination:
-      previous: "« Anterior"
-      next: "Próximo »"
+      previous: "&laquo; Anterior"
+      next: "Próximo &raquo;"
       truncate: "…"
     misc:
       search: "Procurar"
@@ -88,7 +75,6 @@ pt-BR:
     table_headers:
       model_name: "Nome do modelo"
       last_used: "Última vez usado em"
-      last_created: "Última vez criado em"
       records: "Registros"
       username: "Usuário"
       changes: "Alterações"
@@ -97,7 +83,7 @@ pt-BR:
       message: "Mensagem"
     actions:
       dashboard:
-        title: "Administração do Site"
+        title: "Administração do Sistemas"
         menu: "Dashboard"
         breadcrumb: "Dashboard"
       index:
@@ -164,14 +150,14 @@ pt-BR:
       confirmation: "Sim, tenho a certeza"
       delete_confirmation: "Confirmar apagar"
       bulk_delete: "Os seguintes objetos serão apagados, o que pode apagar ou deixar orfãos as dependências relacionadas"
-    export:
+    export:      
       confirmation: "Exportar para %{name}"
       select: "Selecionar campos para exportar"
       fields_from: "Campos de %{name}"
       fields_from_associated: "Campos associados com %{name}"
       display: "Mostrar %{name}: %{type}"
       options_for: "Opções para %{name}"
-      empty_value_for_associated_objects: ""
+      empty_value_for_associated_objects: "<vazio>"
       click_to_reverse_selection: 'Click para inverter selecção'
       csv:
         header_for_root_methods: "%{name}" # 'model' is available
