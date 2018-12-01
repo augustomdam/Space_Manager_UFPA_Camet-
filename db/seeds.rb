@@ -33,12 +33,12 @@ end
               bloco_id: Random.rand(1..5)
 end
 
-4.times do
-    Turma.create curso: 'Sistemas de Informação', ingresso: Random.rand(2013..2018), turno: 'Manhã', tipo: 'Regular' 
-end    
-4.times do
-    Turma.create curso: 'Pedagogia', ingresso: Random.rand(2013..2018), turno: 'Tarde', tipo: 'Regular' 
-end
-4.times do
-    Turma.create curso: 'Matematica', ingresso: Random.rand(2013..2018), turno: 'Manhã', tipo: 'Regular' 
-end
+# 4.times do
+#     Turma.create curso: 'Sistemas de Informação', ingresso: Random.rand(2013..2018), turno: 'Manhã', tipo: 'Regular' 
+# end    
+# 4.times do
+#     Turma.create curso: 'Pedagogia', ingresso: Random.rand(2013..2018), turno: 'Tarde', tipo: 'Regular' 
+# end
+# 4.times do
+#     Turma.create curso: 'Matematica', ingresso: Random.rand(2013..2018), turno: 'Manhã', tipo: 'Regular' 
+# end
