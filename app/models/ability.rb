@@ -6,13 +6,14 @@ class Ability
       if user.admin == 'normal' && user.ativo == 'ativo'
         can :access, :rails_admin
         can :dashboard
-        can :manage, User, id: user.id
+        can :update, User, id: user.id
         can :manage, Reserva, user_id: user.id
         can :manage, Manutencao, user_id: user.id
         can :manage, Pcd, user_id: user.id
       elsif user.admin == 'normal' && user.ativo == 'inativo'
         can :access, :rails_admin
         can :dashboard
+        can :read, User, id: user.id
         can :read, Reserva, user_id: user.id
         can :read, Manutencao, user_id: user.id
         can :read, Pcd, user_id: user.id
