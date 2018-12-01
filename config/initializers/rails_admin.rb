@@ -45,6 +45,31 @@ RailsAdmin.config do |config|
   }
   config.navigation_static_label = "Links Úteis"
 
+  config.model User do
+    create do
+      field  :nome
+      field  :cod
+      field  :admin
+      field  :ativo
+      field  :photo
+    end
+   
+    edit do
+      field  :nome
+      field  :cod
+      field  :admin
+      field  :ativo
+      field  :photo
+    end
+    list do
+      field  :photo
+      field  :nome
+      field  :email
+      field  :admin
+      field  :ativo
+      field  :created_at
+    end
+  end
   config.model Espaco do
     create do
       field  :numero_sala
