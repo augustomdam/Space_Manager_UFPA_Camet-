@@ -16,9 +16,12 @@ module SpaceManagerUfpa
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     ENV['RAILS_ADMIN_THEME'] = 'rollincode'
+<<<<<<< HEAD
     
     config.i18n.enforce_available_locales = false
     config.i18n.available_locales = ["pt-BR"]
+=======
+>>>>>>> 0518f5caf45e10f8e393c91c996575f5baaf417c
     config.i18n.default_locale = :'pt-BR'
     
   end
