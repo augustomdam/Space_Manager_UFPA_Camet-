@@ -23,4 +23,3 @@ module SpaceManagerUfpa
     
   end
 end
-config.assets.enabled = true  

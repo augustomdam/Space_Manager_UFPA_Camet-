@@ -95,4 +95,11 @@ Rails.application.configure do
   config.i18n.enforce_available_locales = false
   config.i18n.available_locales = ["pt-BR"]
   config.i18n.default_locale = :'pt-BR'
+
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
 end
